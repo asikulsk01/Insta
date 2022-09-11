@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Instagram</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background-color: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .navbar {
+            height: 55px;
+            position: fixed;
+            top: 0;
+            background-color: white;
+            border: 1px solid rgb(220, 220, 220);
+            width: 100%;
+        }
+
+        .nav-content {
+            padding: 0px 20px;
+            height: 55px;
+            width: 100%;
+        }
+
+        .logo {
+            margin-right: 22%;
+        }
+
+        .nav-search {
+            height: 25px;
+            width: 200px;
+            border: 1px solid rgb(220, 220, 220);
+            text-indent: 40%;
+            border-radius: 3px;
+            background-color: #fafafa;
+            margin-right: 110px;
+        }
+
+        .nav-icons {
+            margin-right: 15px;
+            font-size: 27px;
+            color: #444444;
+        }
+
+        .stories-box {
+            width: 600px;
+            height: 90px;
+            background-color: white;
+            border: 1px solid rgb(220, 220, 220);
+            border-radius: 3px;
+            margin-top: 90px;
+            margin-left: 20%;
+            padding: 10px;
+        }
+
+        .story {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 10px;
+            margin-right: 20px;
+        }
+
+        .story-image {
+            border-radius: 50%;
+        }
+
+        .story-username {
+            font-size: 14px;
+            color: rgb(69, 69, 69);
+            margin-top: 5px;
+        }
+
+        .post-card{
+            margin-top: 20px;
+            border: 1px solid rgb(220, 220, 220);
+            border-radius: 3px;
+            background-color:  #fafafa;
+            width: 600px;
+            margin-left: 20%;
+            padding: 10px;
+        }
+
+        .post-title{
+            display: flex;
+            align-items: center;
+        }
+
+        .post-profile-image{
+            border-radius: 50%;
+            height: 32px;
+            width: 32px;
+        }
+
+        .post-title-details{
+            margin-left: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-username{
+            font-weight: 650;
+            font-size: 16;
+        }
+
+        .post-location{
+            font-size: 12px;
+            color: rgb(73, 73, 73);
+        }
+
+        .post-image{
+            width: 100%;
+            padding-top: 10px;
+        }
+
+        .post-icons{
+            margin-right: 4px;
+            font-size: 26px;
+        }
+
+        .share-icon{
+            margin-left: 77%;
+        }
+
+        .option-icon{
+            margin-left: 77%;
+        }
+
+        .state{
+            margin-top: 10px;
+        }
+
+        .desc{
+            margin-top: 10px;
+        }
+        .thinner-text{
+            font-weight: 500;
+        }
+
+        .view-all-comments{
+            color: rgb(132, 131,131);
+            font-size: 15px;
+        }
+
+        .comment{
+            margin-right: 7px;
+        }
+
+        .duration-past{
+            color:rgb(132, 131, 131);
+            font-size: 9px;
+        }
+
+        .new-comment{
+            display: flex;
+            align-items: center;
+        }
+
+        .new-comment-input{
+            border: none;
+            border-radius: 6px;
+            margin-left: 10px;
+        }
+
+        .post-text{
+            color: rgb(0,149,246);
+            margin-left: 62%;
+        }
+
+        .aside-container{
+            display: flex;
+            top: 15%;
+            right: 14%;
+            position: fixed; 
+            margin-top: 20px;
+            border: 1px solid rgb(220, 220, 220);
+            border-radius: 3px;
+            background-color:  #fafafa;
+            width: 346px;
+            padding: 10px;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+        }
+
+        .username-profile{
+            font-weight: 650;
+            font-size: 16;
+        }
+        .username{
+            font-size: 12px;
+            color: rgb(73, 73, 73);
+        }
+
+        .switch-user{
+            color: rgb(0,149,246);
+            margin-left: 42%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar flex">
+        <div class="nav-content flex">
+            <img class="logo" src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png">
+            <input class="nav-search" type="text" placeholder="Search">
+            <div>
+                <span class="material-icons nav-icons">home</span>
+                <span class="material-icons-outlined nav-icons">question_answer</span>
+                <span class="material-icons-outlined nav-icons">explore</span>
+                <span class="material-icons-outlined nav-icons">favorite_border</span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- LEFT SIDE STARTS -->
+        <div class="left">
+            <div class="stories-box flex">
+                <!-- One story -->
+                <div class="story">
+                    <img class="story-image" src="https://i.pravatar.cc/56?u=1234">
+                    <span class="story-username">pune_times</span>
+                </div>
+
+                <div class="story">
+                    <img class="story-image" src="https://i.pravatar.cc/56?u=12341">
+                    <span class="story-username">disney-plus</span>
+                </div>
+
+                <div class="story">
+                    <img class="story-image" src="https://i.pravatar.cc/56?u=12342">
+                    <span class="story-username">masaischool</span>
+                </div>
+
+                <div class="story">
+                    <img class="story-image" src="https://i.pravatar.cc/56?u=12343">
+                    <span class="story-username">animalwalefare</span>
+                </div>
+
+                <div class="story">
+                    <img class="story-image" src="https://i.pravatar.cc/56?u=12344">
+                    <span class="story-username">hotstart_</span>
+                </div>
+
+                <div class="story">
+                    <img class="story-image" src="https://i.pravatar.cc/56?u=12346">
+                    <span class="story-username">cool_guy</span>
+                </div>
+            </div>
+    
+            <!--POST CARD 1-->
+            <div class="post-card">
+                <div class="post-title">
+                    <img src="https://i.pravatar.cc/56?u=1287" class="post-profile-image">
+                    <span class="post-title-details">
+                        <span class="post-username">Asikul</span>
+                        <span class="post-location">Berhampore</span>
+                    </span>
+                    <span class="material-icons-outlined option-icon">more_horiz </span>
+                </div>
+                    <!--Post Image-->
+                     <div>
+                        <img class="post-image" src="https://images.unsplash.com/photo-1605377033918-4aa53706582e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2003&q=80" alt="image">
+                        
+                    </div>
+
+                <!--Image Details-->
+                    <div class="interaction">
+                        <span class="material-icons-outlined post-icons">favorite_border</span>
+                        <span class="material-icons-outlined post-icons">chat_bubble_outline</span>
+                        <span class="material-icons-outlined post-icons">send</span>
+                        <span class="material-icons-outlined post-icons share-icon">bookmark_border </span>
+                    </div>
+                    <div class="stats"><img class="story-image" src="https://i.pravatar.cc/16?u=667">
+                        Liked by <strong class="thinner-text">jeniliya_gom</strong> and <strong>2,567 others</strong>
+                    </div>
+                    <div class="desc">
+                        <strong>Asikulsk_01</strong> Nature view.
+                    </div>
+                    <div class="view-all-comments">View all 6 comments</div>
+                    <div class="comment"><strong class="thinner-text comment">bisu.bm</strong>Nice place 😍😍</div>
+                    <div class="comment"><strong class="thinner-text comment">soumn.b</strong>Awesome 👌❤😯</div>
+                    <div class="comment"><strong class="thinner-text comment">masaischool</strong>Nice 😊</div>
+                    <div class="duration-past">1 hour ago</div>
+                    <hr>
+                    <div class="new-comment">
+                        <span class="material-icons-outlined">emoji_emotions </span>
+                        <input class="new-comment-input" type="text" placeholder="Add a comment...">
+                        <span class="post-text">Post</span>
+                    </div>
+            </div>
+
+        </div>
+
+
+          <!--POST CARD 2-->
+          <div class="post-card">
+            <div class="post-title">
+                <img src="https://i.pravatar.cc/56?u=1282" class="post-profile-image">
+                <span class="post-title-details">
+                    <span class="post-username">Biswajit</span>
+                    <span class="post-location">Kolkata</span>
+                    <!--add option-->
+                </span>
+                <span class="material-icons-outlined option-icon">more_horiz </span>
+            </div>
+                <!--Post Image-->
+                 <div>
+                    <img class="post-image" src="https://images.unsplash.com/photo-1608159477376-e92fe7f2b282?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80" alt="image">
+                    
+                </div>
+
+            <!--Image Details-->
+                <div class="interaction">
+                    <span class="material-icons-outlined post-icons">favorite_border</span>
+                    <span class="material-icons-outlined post-icons">chat_bubble_outline</span>
+                    <span class="material-icons-outlined post-icons">send</span>
+                    <span class="material-icons-outlined post-icons share-icon">bookmark_border </span>
+                </div>
+                <div class="stats"><img class="story-image" src="https://i.pravatar.cc/16?u=664">
+                    Liked by <strong class="thinner-text">kevin_gom</strong> and <strong>567 others</strong>
+                </div>
+                <div class="desc">
+                    <strong>Biswajit_</strong> Falls of Falloch.
+                </div>
+                <div class="view-all-comments">View all 6 comments</div>
+                <div class="comment"><strong class="thinner-text comment">Ravi_jay</strong>very Nice 👌</div>
+                <div class="comment"><strong class="thinner-text comment">anjan_kit</strong>Awesome ❤</div>
+                <div class="comment"><strong class="thinner-text comment">kushal.43</strong>beautifull 😯 </div>
+                <div class="duration-past">8 hour ago</div>
+                <hr>
+                <div class="new-comment">
+                    <span class="material-icons-outlined">emoji_emotions </span>
+                    <input class="new-comment-input" type="text" placeholder="Add a comment...">
+                    <span class="post-text">Post</span>
+                </div>
+        </div>
+
+    </div>
+
+
+     
+
+        <!-- LEFT SIDE ENDS -->
+
+        <!-- SIDE CONTAINER -->
+        <div class="aside-container">
+           
+            <img class="profile-image" src="https://i.pravatar.cc/56?u=1232" alt="Profile Pic">
+            <span class="post-title-details">
+                <span class="user-profile">Lara_</span>
+                <span class="username">Lara Agarwal</span>
+            </span>
+            <span class="switch-user">Switch</span>
+            
+        </div>
+        <!-- SIDE CONTAINER -->
+    </main>
+</body>
+</html>
